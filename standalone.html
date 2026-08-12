@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Ezform Enterprise di Taiping, Perak — pakaian seragam, jahitan, pembekalan dan penghantaran untuk organisasi, institusi dan tempahan berkumpulan." />
+  <meta name="theme-color" content="#14283f" />
+  <title>EZFORM ENTERPRISE — Pakaian Seragam & Pembekalan</title>
+  <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTYiIGZpbGw9IiMxNDI4M2YiLz4KICA8cGF0aCBkPSJNMTcgMTZoMzB2OUgyOHY3aDE2djhIMjh2OGgyMHY5SDE3eiIgZmlsbD0iI2YyYzE1YSIvPgo8L3N2Zz4K" type="image/svg+xml" />
+  <style>
+:root {
+  --ink: #14283f;
+  --ink-2: #203e5e;
+  --paper: #f3f0e9;
+  --paper-2: #fffdf9;
+  --line: rgba(20, 40, 63, .18);
+  --muted: #66717c;
+  --gold: #f2c15a;
+  --gold-2: #ead8a9;
+  --blue: #d8e6f1;
+  --slate: #c7d2dc;
+  --mist: #e7ecef;
+  --cream: #f5ead0;
+  --radius: 22px;
+  --shadow: 0 22px 65px rgba(20,40,63,.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; }
+body.menu-open { overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button { color: inherit; }
+img { display: block; max-width: 100%; }
+.container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+.section-pad { padding: 112px 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; top: 10px; left: 10px; transform: translateY(-200%); background: #fff; padding: 10px 14px; z-index: 999; border-radius: 8px; }
+.skip-link:focus { transform: none; }
+.eyebrow { margin: 0 0 18px; text-transform: uppercase; letter-spacing: .14em; font-size: .73rem; font-weight: 850; }
+.eyebrow-light { color: rgba(255,255,255,.64); }
+h1,h2,h3,p { margin-top: 0; }
+h1,h2 { letter-spacing: -.045em; line-height: .98; }
+h1 { font-size: clamp(3.4rem, 8.3vw, 7.5rem); margin-bottom: 30px; font-weight: 760; }
+h1 em { font-family: Georgia, "Times New Roman", serif; font-weight: 400; color: var(--ink-2); }
+h2 { font-size: clamp(2.6rem, 5vw, 5.2rem); margin-bottom: 24px; }
+.button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1px solid transparent; font-weight: 780; cursor: pointer; transition: transform .18s ease, background .18s ease, color .18s ease; }
+.button:hover { transform: translateY(-2px); }
+.button-small { min-height: 42px; padding: 0 18px; font-size: .9rem; }
+.button-dark { background: var(--ink); color: #fff; }
+.button-dark:hover { background: var(--ink-2); }
+.button-gold { background: var(--gold); color: var(--ink); }
+.button-gold:hover { background: #f7cf78; }
+.button-light { background: #fff; color: var(--ink); }
+.button-outline { background: transparent; border-color: var(--ink); }
+.text-link { font-weight: 750; border-bottom: 1px solid currentColor; padding-bottom: 3px; }
+.site-header { position: relative; z-index: 50; }
+.announcement { background: var(--ink); color: #fff; font-size: .78rem; letter-spacing: .04em; }
+.announcement-inner { min-height: 36px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.announcement a { color: var(--gold); }
+.nav { min-height: 86px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 920; letter-spacing: -.03em; }
+.brand-mark { width: 36px; height: 36px; display: inline-grid; place-items: center; border: 2px solid var(--ink); border-radius: 9px; font-family: Georgia, serif; font-style: italic; background: var(--gold); }
+.nav-menu { display: flex; align-items: center; gap: 27px; font-size: .92rem; font-weight: 680; }
+.nav-menu > a:not(.button) { position: relative; }
+.nav-menu > a:not(.button)::after { content:""; position:absolute; left:0; bottom:-6px; width:100%; height:1px; background:currentColor; transform:scaleX(0); transform-origin:right; transition:transform .2s ease; }
+.nav-menu > a:not(.button):hover::after { transform:scaleX(1); transform-origin:left; }
+.nav-toggle { display:none; background:transparent; border:0; width:44px; height:44px; padding:10px; }
+.nav-toggle span:not(.sr-only) { display:block; height:2px; background:var(--ink); margin:7px 0; }
+.hero { overflow: hidden; min-height: 760px; display: flex; align-items: center; }
+.hero-grid { display:grid; grid-template-columns: 1.07fr .93fr; gap: 50px; align-items:center; }
+.hero-copy { position: relative; z-index: 2; }
+.hero-lede { font-size: clamp(1rem, 1.5vw, 1.2rem); color: var(--muted); max-width: 650px; margin-bottom: 32px; }
+.hero-actions { display:flex; align-items:center; gap:24px; }
+.hero-proof { display:flex; gap:36px; margin-top:64px; padding-top:24px; border-top:1px solid var(--line); max-width:640px; }
+.hero-proof div { display:grid; gap:2px; }
+.hero-proof strong { font-size:1.28rem; }
+.hero-proof span { font-size:.71rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+.hero-art { min-height: 590px; position: relative; display:grid; place-items:center; }
+.mockup-card { position:relative; z-index:3; width:min(390px, 76%); aspect-ratio:.82; background:#fff; border:1px solid var(--line); border-radius:26px; box-shadow:var(--shadow); padding:20px; transform:rotate(3deg); display:flex; flex-direction:column; justify-content:space-between; }
+.mockup-card img { height:75%; object-fit:contain; }
+.mockup-label,.mockup-caption { font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; font-weight:800; }
+.mockup-caption { align-self:flex-end; color:var(--muted); }
+.floating-card { position:absolute; z-index:4; width:145px; background:var(--paper-2); border:1px solid var(--line); border-radius:18px; padding:14px; box-shadow:0 15px 40px rgba(20,40,63,.12); font-size:.72rem; font-weight:800; text-align:center; }
+.floating-card img { height:100px; width:100%; object-fit:contain; margin-bottom:4px; }
+.floating-a { right:0; top:70px; transform:rotate(-5deg); }
+.floating-b { left:0; bottom:60px; transform:rotate(5deg); }
+.hero-sticker { position:absolute; z-index:5; left:8px; top:80px; width:94px; height:94px; display:grid; place-items:center; text-align:center; border-radius:50%; background:var(--gold); border:2px solid var(--ink); font-size:.67rem; line-height:1.1; letter-spacing:.08em; font-weight:900; transform:rotate(-8deg); }
+.hero-orbit { position:absolute; border:1px solid rgba(20,40,63,.18); border-radius:50%; }
+.orbit-one { width:500px; height:500px; }
+.orbit-two { width:600px; height:320px; transform:rotate(-15deg); }
+.ticker { overflow:hidden; background:var(--gold); border-block:1px solid var(--ink); }
+.ticker-track { width:max-content; display:flex; align-items:center; gap:28px; padding:14px 0; animation:ticker 30s linear infinite; font-weight:900; font-size:.78rem; letter-spacing:.12em; }
+.ticker-track b { font-size:.95rem; }
+@keyframes ticker { to { transform:translateX(-50%); } }
+.section-heading { display:grid; grid-template-columns:1.15fr .85fr; gap:60px; align-items:end; margin-bottom:52px; }
+.section-heading h2 { margin-bottom:0; }
+.section-heading > p { margin:0 0 7px; color:var(--muted); max-width:500px; }
+.filter-bar { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
+.filter-chip { border:1px solid var(--line); background:transparent; border-radius:999px; padding:9px 14px; cursor:pointer; font-size:.8rem; font-weight:750; }
+.filter-chip.active,.filter-chip:hover { background:var(--ink); color:#fff; border-color:var(--ink); }
+.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+.product-card { border:1px solid var(--line); background:var(--paper-2); border-radius:var(--radius); overflow:hidden; transition:transform .22s ease, box-shadow .22s ease; }
+.product-card:hover { transform:translateY(-5px); box-shadow:var(--shadow); }
+.product-card.hidden { display:none; }
+.product-visual { aspect-ratio:1.15; display:grid; place-items:center; overflow:hidden; border-bottom:1px solid var(--line); }
+.product-visual img { width:72%; height:72%; object-fit:contain; transition:transform .25s ease; }
+.product-card:hover .product-visual img { transform:scale(1.04) rotate(-1deg); }
+.visual-gold { background:var(--gold-2); }.visual-slate{background:var(--slate)}.visual-blue{background:var(--blue)}.visual-cream{background:var(--cream)}.visual-mist{background:var(--mist)}.visual-navy{background:#aebdcb}
+.product-info { padding:22px; }
+.product-info > span { display:block; color:var(--muted); font-size:.65rem; letter-spacing:.11em; text-transform:uppercase; font-weight:800; margin-bottom:8px; }
+.product-info h3 { font-size:1.35rem; letter-spacing:-.03em; margin-bottom:9px; }
+.product-info p { color:var(--muted); font-size:.9rem; min-height:64px; }
+.product-add { border:0; padding:0 0 2px; background:transparent; border-bottom:1px solid currentColor; font-weight:780; font-size:.8rem; cursor:pointer; }
+.product-add.added { color:#5d7f16; }
+.process { background:var(--ink); color:#fff; }
+.process-wrap { display:grid; grid-template-columns:.8fr 1.2fr; gap:100px; }
+.process-intro { position:sticky; top:40px; align-self:start; }
+.process-intro > p:not(.eyebrow) { color:rgba(255,255,255,.62); max-width:500px; }
+.steps { list-style:none; padding:0; margin:0; border-top:1px solid rgba(255,255,255,.2); }
+.steps li { display:grid; grid-template-columns:70px 1fr; gap:18px; padding:32px 0; border-bottom:1px solid rgba(255,255,255,.2); }
+.steps > li > span { color:var(--gold); font-size:.78rem; font-weight:900; letter-spacing:.1em; }
+.steps h3 { font-size:1.65rem; margin-bottom:7px; }
+.steps p { color:rgba(255,255,255,.62); margin:0; max-width:600px; }
+.service-list { border-top:1px solid var(--line); }
+.service-row { display:grid; grid-template-columns:55px 1fr 1.7fr auto; gap:24px; align-items:center; padding:28px 0; border-bottom:1px solid var(--line); transition:background .2s ease,padding .2s ease; }
+.service-row:hover { background:#fff; padding-left:18px; padding-right:18px; }
+.service-no { font-size:.75rem; letter-spacing:.12em; color:var(--muted); }
+.service-row h3 { margin:0; font-size:1.45rem; letter-spacing:-.03em; }
+.service-row p { margin:0; color:var(--muted); font-size:.92rem; }
+.service-tag { justify-self:end; border:1px solid var(--ink); border-radius:999px; padding:6px 10px; font-size:.64rem; font-weight:850; letter-spacing:.08em; }
+.about-grid { display:grid; grid-template-columns:.92fr 1.08fr; gap:90px; align-items:center; }
+.about-poster { aspect-ratio:.83; position:relative; overflow:hidden; border-radius:var(--radius); background:var(--gold); border:1px solid var(--line); }
+.about-poster img { position:absolute; width:75%; right:-3%; bottom:-4%; transform:rotate(-5deg); filter:drop-shadow(0 20px 18px rgba(20,40,63,.18)); }
+.poster-copy { position:absolute; inset:28px auto auto 28px; display:grid; font-size:clamp(3.2rem,6vw,6.7rem); line-height:.78; font-weight:950; letter-spacing:-.08em; z-index:2; }
+.poster-copy span:nth-child(2) { -webkit-text-stroke:2px var(--ink); color:transparent; }
+.poster-dot { position:absolute; border-radius:50%; background:#fff; }.dot-a { width:120px; height:120px; right:30px; top:55px; }.dot-b { width:44px; height:44px; left:44px; bottom:54px; background:var(--blue); }
+.about-copy > p:not(.eyebrow) { color:var(--muted); font-size:1.04rem; max-width:650px; }
+.about-points { margin-top:36px; border-top:1px solid var(--line); }
+.about-points div { display:grid; grid-template-columns:1fr 1.45fr; gap:20px; padding:18px 0; border-bottom:1px solid var(--line); }
+.about-points span { color:var(--muted); font-size:.9rem; }
+.credibility { background:#e9e3d5; border-block:1px solid var(--line); }
+.credibility-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:70px; align-items:start; }
+.credibility-grid h2 { margin-bottom:0; }
+.credibility-card { background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius); padding:34px; box-shadow:var(--shadow); }
+.credibility-year { display:inline-flex; border-radius:999px; background:var(--ink); color:#fff; padding:6px 10px; font-size:.72rem; font-weight:850; letter-spacing:.08em; margin-bottom:20px; }
+.credibility-card p { color:var(--muted); font-size:1.05rem; }
+.quote { background:var(--blue); }
+.quote-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; align-items:start; }
+.quote-copy { position:sticky; top:40px; }
+.quote-copy > p:not(.eyebrow) { max-width:500px; color:#42566a; }
+.contact-list { margin-top:38px; border-top:1px solid rgba(20,40,63,.25); }
+.contact-list > * { display:grid; gap:2px; padding:18px 0; border-bottom:1px solid rgba(20,40,63,.25); }
+.contact-list span { text-transform:uppercase; font-size:.66rem; letter-spacing:.12em; font-weight:850; }
+.quote-form { background:var(--paper-2); border-radius:var(--radius); padding:34px; border:1px solid rgba(20,40,63,.15); box-shadow:var(--shadow); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.quote-form label { display:grid; gap:8px; font-size:.72rem; font-weight:850; text-transform:uppercase; letter-spacing:.06em; margin-bottom:17px; }
+.quote-form input,.quote-form select,.quote-form textarea { width:100%; border:1px solid #c3c8ca; border-radius:10px; background:#fff; padding:13px 14px; color:var(--ink); text-transform:none; letter-spacing:0; outline:none; }
+.quote-form textarea { resize:vertical; }
+.quote-form input:focus,.quote-form select:focus,.quote-form textarea:focus { border-color:var(--ink); box-shadow:0 0 0 3px rgba(20,40,63,.08); }
+.quote-form fieldset { border:0; padding:0; margin:8px 0 0; }
+.quote-form legend { font-size:.72rem; font-weight:850; text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px; }
+.send-options { display:flex; gap:12px; }
+.form-note { color:var(--muted); font-size:.76rem; margin:16px 0 0; }
+.form-note code { background:#ebe7df; padding:2px 5px; border-radius:4px; }
+.selected-products { background:#f9efd1; border:1px solid #cc9f3b; border-radius:12px; padding:14px; margin-bottom:20px; }
+.selected-products > span { font-size:.69rem; text-transform:uppercase; letter-spacing:.1em; font-weight:850; }
+#selected-product-chips { display:flex; flex-wrap:wrap; gap:7px; margin-top:8px; }
+.selected-chip { border:1px solid #b3892f; background:#fff; border-radius:999px; padding:5px 9px; font-size:.72rem; }
+.footer { background:var(--ink); color:#fff; padding:70px 0 24px; }
+.footer-grid { display:grid; grid-template-columns:1.7fr repeat(3,1fr); gap:44px; }
+.brand-footer .brand-mark { border-color:#fff; color:var(--ink); }
+.footer-grid > div { display:grid; align-content:start; gap:9px; }
+.footer-grid > div:first-child p { color:rgba(255,255,255,.55); max-width:340px; margin-top:10px; }
+.footer-title { color:rgba(255,255,255,.45); text-transform:uppercase; letter-spacing:.12em; font-size:.68rem; font-weight:850; margin-bottom:6px; }
+.footer-grid a,.footer-grid div > span:not(.footer-title):not(.brand-mark) { font-size:.9rem; }
+.footer-bottom { margin-top:64px; padding-top:22px; border-top:1px solid rgba(255,255,255,.15); display:flex; justify-content:space-between; gap:20px; color:rgba(255,255,255,.5); font-size:.72rem; }
+.toast { position:fixed; left:50%; bottom:24px; transform:translate(-50%,20px); background:var(--ink); color:#fff; padding:12px 18px; border-radius:999px; box-shadow:var(--shadow); opacity:0; pointer-events:none; z-index:100; transition:opacity .2s ease, transform .2s ease; font-size:.84rem; }
+.toast.show { opacity:1; transform:translate(-50%,0); }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto}.ticker-track{animation:none}.reveal{opacity:1;transform:none;transition:none}.button,.product-card{transition:none} }
+@media (max-width: 980px) {
+  .section-pad { padding:86px 0; }.nav-toggle { display:block; }
+  .nav-menu { position:fixed; inset:122px 0 0; background:var(--paper); display:flex; flex-direction:column; align-items:flex-start; padding:38px 24px; gap:24px; transform:translateX(100%); transition:transform .25s ease; font-size:1.25rem; }
+  .nav-menu.open { transform:none; }.nav-menu .button { width:100%; margin-top:10px; }
+  .hero-grid,.process-wrap,.about-grid,.quote-grid,.credibility-grid { grid-template-columns:1fr; }.hero { padding-top:70px; }.hero-art { min-height:520px; margin-top:10px; }
+  .product-grid { grid-template-columns:repeat(2,1fr); }.section-heading { grid-template-columns:1fr; gap:24px; }.process-wrap { gap:55px; }.process-intro,.quote-copy { position:static; }
+  .about-grid { gap:55px; }.about-poster { max-width:660px; }.quote-grid { gap:45px; }.footer-grid { grid-template-columns:1.5fr 1fr 1fr; }.footer-grid > div:last-child { grid-column:2; }
+}
+@media (max-width: 680px) {
+  .container { width:min(100% - 28px,1180px); }.announcement-inner > span { display:none; }.announcement-inner { justify-content:center; }.nav { min-height:74px; }.nav-menu { inset:110px 0 0; }.brand-name { font-size:.92rem; }
+  .section-pad { padding:68px 0; }h1 { font-size:clamp(3.1rem,15vw,5.15rem); }h2 { font-size:clamp(2.45rem,11.5vw,3.9rem); }.hero { min-height:auto; }.hero-actions { align-items:flex-start; flex-direction:column; gap:18px; }
+  .hero-proof { gap:14px; justify-content:space-between; }.hero-proof strong { font-size:1.05rem; }.hero-proof span { font-size:.58rem; }.hero-art { min-height:420px; }.mockup-card { width:70%; }.floating-card { width:108px; padding:10px; }.floating-card img { max-height:65px; }
+  .floating-a { right:-4px; top:42px; }.floating-b { left:-4px; bottom:38px; }.hero-sticker { width:78px; height:78px; left:0; top:66px; font-size:.58rem; }.orbit-one { width:360px; height:360px; }.orbit-two { width:430px; height:240px; }
+  .product-grid { grid-template-columns:1fr; }.product-visual { aspect-ratio:1.22; }.product-visual img { max-height:210px; }.steps li { grid-template-columns:48px 1fr; }
+  .service-row { grid-template-columns:45px 1fr auto; gap:12px; padding:22px 0; }.service-row p { grid-column:2 / -1; }.service-row:hover { padding-left:0; padding-right:0; background:transparent; }
+  .about-points div { grid-template-columns:1fr; gap:5px; }.form-row { grid-template-columns:1fr; gap:0; }.quote-form { padding:24px 18px; }.send-options { flex-direction:column; }.send-options .button { width:100%; }
+  .footer-grid { grid-template-columns:1fr 1fr; gap:36px 24px; }.footer-grid > div:first-child { grid-column:1 / -1; }.footer-grid > div:last-child { grid-column:auto; }.footer-bottom { flex-direction:column; }
+}
+
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Langkau ke kandungan</a>
+
+  <header class="site-header" id="top">
+    <div class="announcement">
+      <div class="container announcement-inner">
+        <span>Taiping, Perak • Jahitan • Pembekalan • Penghantaran</span>
+        <a href="#quotation">Minta sebut harga <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <nav class="nav container" aria-label="Navigasi utama">
+      <a href="#top" class="brand" aria-label="Laman utama Ezform Enterprise">
+        <span class="brand-mark" aria-hidden="true">E</span>
+        <span class="brand-name" data-brand>EZFORM ENTERPRISE</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="sr-only">Buka menu</span><span></span><span></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#solutions">Produk</a>
+        <a href="#services">Perkhidmatan</a>
+        <a href="#process">Proses</a>
+        <a href="#about">Tentang</a>
+        <a href="#contact">Hubungi</a>
+        <a class="button button-small button-gold" href="#quotation">Sebut harga</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section-pad">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Uniform & institutional supply • Taiping, Perak</p>
+          <h1>Seragam yang dibuat<br><em>untuk bekerja.</em></h1>
+          <p class="hero-lede">Ezform Enterprise menyediakan pakaian seragam melalui pendekatan tempahan: fahami keperluan organisasi, tentukan spesifikasi dan saiz, kemudian urus jahitan, pembekalan dan penghantaran.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#solutions">Lihat kategori</a>
+            <a class="text-link" href="#quotation">Minta sebut harga <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-proof" aria-label="Sorotan perkhidmatan">
+            <div><strong>Taiping</strong><span>Perak</span></div>
+            <div><strong>Bulk</strong><span>tempahan organisasi</span></div>
+            <div><strong>End-to-end</strong><span>jahit • bekal • hantar</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art reveal" aria-label="Ilustrasi pakaian seragam">
+          <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+          <div class="mockup-card mockup-main">
+            <span class="mockup-label">EZFORM / UNIFORM 01</span>
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMTggODNsNTQtMjVoNzZsNTQgMjUgNjMgNTItNDcgNjItMzktMjh2MTcwSDE0MVYxNjlsLTM5IDI4LTQ3LTYyeiIvPgogIDxwYXRoIGZpbGw9IiNlNmVkZjQiIGQ9Ik0xNzIgNThsMzggNTMgMzgtNTN6Ii8+CiAgPHBhdGggZD0iTTIxMCAxMTF2MjI4TTE3NyAxMjZoMjh2MzVoLTI4ek0yMzYgMTI2aDI4djM1aC0yOHoiLz4KICA8cGF0aCBkPSJNMTQxIDE5OWgxMzgiLz4KIDwvZz4KPC9zdmc+Cg==" alt="Ilustrasi kemeja seragam" />
+            <span class="mockup-caption">Built around your specification</span>
+          </div>
+          <div class="floating-card floating-a"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMTggNzNsNTUtMjJoNzRsNTUgMjIgNjAgNjktNDUgNDUtMzUtMzUtMTQgMTY0SDE1MmwtMTQtMTY0LTM1IDM1LTQ1LTQ1eiIvPgogIDxwYXRoIGZpbGw9IiNmNGQ5OTUiIGQ9Ik0xNzMgNTFjNyAzNSAyNCA1MyAzNyA1M3MzMC0xOCAzNy01MyIvPgogIDxwYXRoIGQ9Ik0yMTAgMTA1djIxMU0xNjkgMTgxaDgyIi8+CiAgPHBhdGggZmlsbD0iI2U2ZWRmNCIgZD0iTTE0NiAzMTZoMTI4bDIzIDc0SDEyM3oiLz4KICA8cGF0aCBkPSJNMjEwIDMxNnY3NCIvPgogPC9nPgo8L3N2Zz4K" alt="Ilustrasi baju kurung seragam" /><span>Baju Kurung</span></div>
+          <div class="floating-card floating-b"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxyZWN0IHg9Ijg2IiB5PSI1NSIgd2lkdGg9IjI0OCIgaGVpZ2h0PSIzMTAiIHJ4PSIxOCIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGZpbGw9IiNmNGQ5OTUiIGQ9Ik0xNTEgMzhoMTE4djUwSDE1MXoiLz4KICA8cGF0aCBkPSJNMTM5IDE0NmgxNDJNMTM5IDE5MWgxNDJNMTM5IDIzNmg4Mk0xMzkgMzAwbDIzIDIyIDQ4LTU1Ii8+CiA8L2c+Cjwvc3ZnPgo=" alt="Ilustrasi dokumen spesifikasi" /><span>Bulk / Tender</span></div>
+          <div class="hero-sticker">FIT<br>SUPPLY<br>DELIVER</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker" aria-label="Jenis perkhidmatan">
+      <div class="ticker-track">
+        <span>PAKAIAN SERAGAM</span><b>✦</b><span>BAJU KURUNG</span><b>✦</b><span>JAHITAN</span><b>✦</b><span>PEMBEKALAN</span><b>✦</b><span>TEMPAHAN BERKUMPULAN</span><b>✦</b><span>PENGHANTARAN</span><b>✦</b>
+        <span aria-hidden="true">PAKAIAN SERAGAM</span><b aria-hidden="true">✦</b><span aria-hidden="true">BAJU KURUNG</span><b aria-hidden="true">✦</b><span aria-hidden="true">JAHITAN</span><b aria-hidden="true">✦</b><span aria-hidden="true">PEMBEKALAN</span><b aria-hidden="true">✦</b><span aria-hidden="true">TEMPAHAN BERKUMPULAN</span><b aria-hidden="true">✦</b><span aria-hidden="true">PENGHANTARAN</span><b aria-hidden="true">✦</b>
+      </div>
+    </section>
+
+    <section class="products section-pad" id="solutions">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Kategori tempahan</p><h2>Uniform ikut fungsi dan spesifikasi.</h2></div>
+          <p>Mulakan dengan jenis pakaian dan kegunaan. Untuk tempahan organisasi, butiran seperti kuantiti, saiz, material, warna, tarikh diperlukan dan keperluan penghantaran boleh dimasukkan dalam permintaan sebut harga.</p>
+        </div>
+
+        <div class="filter-bar reveal" role="group" aria-label="Tapis kategori">
+          <button class="filter-chip active" data-filter="all" type="button">Semua</button>
+          <button class="filter-chip" data-filter="uniform" type="button">Seragam</button>
+          <button class="filter-chip" data-filter="women" type="button">Wanita</button>
+          <button class="filter-chip" data-filter="institutional" type="button">Institusi / Bulk</button>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card reveal" data-category="women uniform">
+            <div class="product-visual visual-gold"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMTggNzNsNTUtMjJoNzRsNTUgMjIgNjAgNjktNDUgNDUtMzUtMzUtMTQgMTY0SDE1MmwtMTQtMTY0LTM1IDM1LTQ1LTQ1eiIvPgogIDxwYXRoIGZpbGw9IiNmNGQ5OTUiIGQ9Ik0xNzMgNTFjNyAzNSAyNCA1MyAzNyA1M3MzMC0xOCAzNy01MyIvPgogIDxwYXRoIGQ9Ik0yMTAgMTA1djIxMU0xNjkgMTgxaDgyIi8+CiAgPHBhdGggZmlsbD0iI2U2ZWRmNCIgZD0iTTE0NiAzMTZoMTI4bDIzIDc0SDEyM3oiLz4KICA8cGF0aCBkPSJNMjEwIDMxNnY3NCIvPgogPC9nPgo8L3N2Zz4K" alt="Baju kurung seragam" /></div>
+            <div class="product-info"><span>01 / Uniform wanita</span><h3>Baju Kurung Seragam</h3><p>Pilihan baju kurung untuk kegunaan uniform, termasuk tempahan berkumpulan mengikut spesifikasi.</p><button class="product-add" type="button" data-product="Baju Kurung Seragam">Tambah ke permintaan +</button></div>
+          </article>
+          <article class="product-card reveal" data-category="uniform institutional">
+            <div class="product-visual visual-slate"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMTIgOTJsNjMtMzVoNzBsNjMgMzUgNTUgNDktNDUgNTUtMzktMjh2MTY5SDE0MVYxNjhsLTM5IDI4LTQ1LTU1eiIvPgogIDxwYXRoIGZpbGw9IiNmNGQ5OTUiIGQ9Ik0xNzUgNTdsMzUgNTQgMzUtNTQtNyA1My0yOCAyOS0yOC0yOXoiLz4KICA8cGF0aCBkPSJNMjEwIDEzOXYxOThNMTYxIDE3Nmg5OCIvPgogIDxwYXRoIGZpbGw9IiNkYmU0ZWEiIGQ9Ik0xNjUgMTg4aDM2djM4aC0zNnoiLz4KIDwvZz4KPC9zdmc+Cg==" alt="Kemeja korporat" /></div>
+            <div class="product-info"><span>02 / Uniform organisasi</span><h3>Kemeja & Pakaian Korporat</h3><p>Seragam kerja berimej kemas untuk pasukan pejabat, kaunter, operasi dan organisasi.</p><button class="product-add" type="button" data-product="Kemeja & Pakaian Korporat">Tambah ke permintaan +</button></div>
+          </article>
+          <article class="product-card reveal" data-category="uniform institutional">
+            <div class="product-visual visual-blue"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMjEgNzZsNTAtMjRoNzhsNTAgMjQgNTIgNTQtNDAgNTAtMzUtMjktOCAxOTNIMTUybC04LTE5My0zNSAyOS00MC01MHoiLz4KICA8cGF0aCBmaWxsPSIjZDhlNmYxIiBkPSJNMTcxIDUybDM5IDYxIDM5LTYxeiIvPgogIDxwYXRoIGQ9Ik0yMTAgMTEzdjIzMU0xNjggMTUzaDI5djM0aC0yOXpNMjM5IDE1M2gyOXYzNGgtMjl6Ii8+CiAgPHBhdGggZD0iTTE2NyAyMjdoODZNMTY3IDI1N2g4NiIvPgogPC9nPgo8L3N2Zz4K" alt="Uniform kakitangan sokongan" /></div>
+            <div class="product-info"><span>03 / Institutional</span><h3>Uniform Kakitangan Sokongan</h3><p>Tempahan uniform untuk fungsi kerja seperti kakitangan sokongan, pembantu dan keperluan jabatan.</p><button class="product-add" type="button" data-product="Uniform Kakitangan Sokongan">Tambah ke permintaan +</button></div>
+          </article>
+          <article class="product-card reveal" data-category="uniform">
+            <div class="product-visual visual-cream"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMTggODNsNTQtMjVoNzZsNTQgMjUgNjMgNTItNDcgNjItMzktMjh2MTcwSDE0MVYxNjlsLTM5IDI4LTQ3LTYyeiIvPgogIDxwYXRoIGZpbGw9IiNlNmVkZjQiIGQ9Ik0xNzIgNThsMzggNTMgMzgtNTN6Ii8+CiAgPHBhdGggZD0iTTIxMCAxMTF2MjI4TTE3NyAxMjZoMjh2MzVoLTI4ek0yMzYgMTI2aDI4djM1aC0yOHoiLz4KICA8cGF0aCBkPSJNMTQxIDE5OWgxMzgiLz4KIDwvZz4KPC9zdmc+Cg==" alt="Kemeja seragam" /></div>
+            <div class="product-info"><span>04 / Uniform</span><h3>Kemeja & Blouse Seragam</h3><p>Potongan dan spesifikasi boleh diselaraskan mengikut keperluan pasukan dan identiti organisasi.</p><button class="product-add" type="button" data-product="Kemeja & Blouse Seragam">Tambah ke permintaan +</button></div>
+          </article>
+          <article class="product-card reveal" data-category="uniform women">
+            <div class="product-visual visual-mist"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMzIgNThoMTU2bC0xMCAxMTkgMzMgMTg4LTY5IDEyLTMyLTE1OC0zMiAxNTgtNjktMTIgMzMtMTg4eiIvPgogIDxwYXRoIGQ9Ik0xMzIgOTFoMTU2TTIxMCA1OXYxNjBNMTUzIDExOWgxMTQiLz4KIDwvZz4KPC9zdmc+Cg==" alt="Seluar seragam" /></div>
+            <div class="product-info"><span>05 / Set uniform</span><h3>Seluar & Komponen Set</h3><p>Komponen pakaian untuk melengkapkan set seragam mengikut spesifikasi dan julat saiz.</p><button class="product-add" type="button" data-product="Seluar & Komponen Set">Tambah ke permintaan +</button></div>
+          </article>
+          <article class="product-card reveal" data-category="institutional">
+            <div class="product-visual visual-navy"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxyZWN0IHg9Ijg2IiB5PSI1NSIgd2lkdGg9IjI0OCIgaGVpZ2h0PSIzMTAiIHJ4PSIxOCIgZmlsbD0iI2ZmZiIvPgogIDxwYXRoIGZpbGw9IiNmNGQ5OTUiIGQ9Ik0xNTEgMzhoMTE4djUwSDE1MXoiLz4KICA8cGF0aCBkPSJNMTM5IDE0NmgxNDJNMTM5IDE5MWgxNDJNMTM5IDIzNmg4Mk0xMzkgMzAwbDIzIDIyIDQ4LTU1Ii8+CiA8L2c+Cjwvc3ZnPgo=" alt="Dokumen tempahan pukal" /></div>
+            <div class="product-info"><span>06 / Bulk & quotation</span><h3>Tempahan Institusi / Tender</h3><p>Permintaan berkumpulan yang memerlukan spesifikasi, kuantiti, penghantaran dan dokumentasi sebut harga.</p><button class="product-add" type="button" data-product="Tempahan Institusi / Tender">Tambah ke permintaan +</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section-pad" id="process">
+      <div class="container process-wrap">
+        <div class="process-intro reveal">
+          <p class="eyebrow eyebrow-light">Cara tempahan</p>
+          <h2>Dari spesifikasi<br>ke penghantaran.</h2>
+          <p>Untuk seragam, ketepatan spesifikasi lebih penting daripada memilih produk secara rawak. Proses ini dibina supaya organisasi boleh bermula dengan dokumen keperluan, ukuran atau contoh sedia ada.</p>
+          <a href="#quotation" class="button button-light">Mulakan permintaan</a>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><span>01</span><div><h3>Kongsi keperluan</h3><p>Berikan jenis pakaian, kuantiti, julat saiz, warna, material, contoh atau dokumen spesifikasi jika ada.</p></div></li>
+          <li class="reveal"><span>02</span><div><h3>Semak spesifikasi & saiz</h3><p>Sahkan butiran jahitan, ukuran, komponen set dan keperluan organisasi sebelum pengeluaran.</p></div></li>
+          <li class="reveal"><span>03</span><div><h3>Jahit, bekal & hantar</h3><p>Selepas kelulusan sebut harga dan spesifikasi, tempahan disediakan untuk pembekalan dan penghantaran.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">Perkhidmatan</p><h2>Lebih daripada sekadar pakaian siap.</h2></div>
+          <p>Fokus laman ini ialah perkara yang relevan untuk pembelian uniform: spesifikasi, saiz, jahitan, pembekalan, pesanan berkumpulan dan penghantaran.</p>
+        </div>
+        <div class="service-list">
+          <article class="service-row reveal"><span class="service-no">01</span><h3>Semakan keperluan</h3><p>Susun kategori pakaian, kuantiti, saiz, material, warna, tempoh dan lokasi penghantaran.</p><span class="service-tag">BRIEF</span></article>
+          <article class="service-row reveal"><span class="service-no">02</span><h3>Jahitan & penyesuaian</h3><p>Tempahan pakaian seragam mengikut potongan, ukuran dan spesifikasi yang dipersetujui.</p><span class="service-tag">TAILOR</span></article>
+          <article class="service-row reveal"><span class="service-no">03</span><h3>Pembekalan berkumpulan</h3><p>Urus pesanan dengan jumlah dan julat saiz yang sesuai untuk pasukan, jabatan atau organisasi.</p><span class="service-tag">SUPPLY</span></article>
+          <article class="service-row reveal"><span class="service-no">04</span><h3>Sebut harga institusi</h3><p>Sediakan maklumat tempahan yang jelas untuk pembelian organisasi dan permintaan berasaskan spesifikasi.</p><span class="service-tag">QUOTE</span></article>
+          <article class="service-row reveal"><span class="service-no">05</span><h3>Penghantaran</h3><p>Susun penghantaran sebagai sebahagian daripada pemenuhan tempahan mengikut lokasi yang dipersetujui.</p><span class="service-tag">DELIVER</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section-pad" id="about">
+      <div class="container about-grid">
+        <div class="about-poster reveal" aria-hidden="true">
+          <div class="poster-copy"><span>FIT</span><span>FORM</span><span>WORK</span></div>
+          <div class="poster-dot dot-a"></div><div class="poster-dot dot-b"></div>
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MjAgNDIwIj4KIDxnIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0MjgzZiIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xMTggNzNsNTUtMjJoNzRsNTUgMjIgNjAgNjktNDUgNDUtMzUtMzUtMTQgMTY0SDE1MmwtMTQtMTY0LTM1IDM1LTQ1LTQ1eiIvPgogIDxwYXRoIGZpbGw9IiNmNGQ5OTUiIGQ9Ik0xNzMgNTFjNyAzNSAyNCA1MyAzNyA1M3MzMC0xOCAzNy01MyIvPgogIDxwYXRoIGQ9Ik0yMTAgMTA1djIxMU0xNjkgMTgxaDgyIi8+CiAgPHBhdGggZmlsbD0iI2U2ZWRmNCIgZD0iTTE0NiAzMTZoMTI4bDIzIDc0SDEyM3oiLz4KICA8cGF0aCBkPSJNMjEwIDMxNnY3NCIvPgogPC9nPgo8L3N2Zz4K" alt="" />
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">Ezform Enterprise</p>
+          <h2>Uniform supplier based in Taiping.</h2>
+          <p>Ezform Enterprise beroperasi di Taiping, Perak dan disenaraikan dalam sumber perniagaan awam sebagai perniagaan berkaitan pakaian/uniform. Rekod katalog awam turut menyenaraikan baju kurung tradisional sebagai produk uniform.</p>
+          <p>Untuk pelanggan organisasi, nilai utama laman ini ialah laluan terus kepada permintaan sebut harga: beritahu apa yang diperlukan, berapa banyak, saiz, tarikh dan lokasi penghantaran.</p>
+          <div class="about-points">
+            <div><strong>Berpusat di Taiping</strong><span>3A, Lorong Tupai, 34000 Taiping, Perak.</span></div>
+            <div><strong>Fokus uniform</strong><span>Pakaian seragam dan tempahan mengikut spesifikasi.</span></div>
+            <div><strong>Institutional-ready</strong><span>Aliran permintaan sesuai untuk pembelian organisasi dan tempahan pukal.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="credibility section-pad" aria-label="Pengalaman pembekalan">
+      <div class="container credibility-grid">
+        <div class="reveal"><p class="eyebrow">Public procurement signal</p><h2>Pengalaman untuk keperluan institusi.</h2></div>
+        <div class="credibility-card reveal">
+          <span class="credibility-year">2026</span>
+          <p>Rekod perolehan awam menunjukkan EZFORM ENTERPRISE sebagai kontraktor berjaya bagi satu sebut harga Perak untuk menjahit, membekal dan menghantar pakaian seragam bagi kakitangan sokongan.</p>
+          <a href="#quotation" class="text-link">Bincang keperluan organisasi <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote section-pad" id="quotation">
+      <div class="container quote-grid">
+        <div class="quote-copy reveal" id="contact">
+          <p class="eyebrow">Permintaan sebut harga</p>
+          <h2>Kongsi spesifikasi tempahan anda.</h2>
+          <p>Isi maklumat asas dan laman ini akan menyediakan mesej WhatsApp yang tersusun untuk dihantar kepada Ezform Enterprise.</p>
+          <div class="contact-list">
+            <a data-phone-link href="tel:+60164111007"><span>Telefon / Mobile</span><strong data-phone>+60 16-411 1007</strong></a>
+            <a data-landline-link href="tel:+6058411007"><span>Telefon pejabat</span><strong data-landline>+60 5-841 1007</strong></a>
+            <div><span>Alamat</span><strong data-location>3A, Lorong Tupai, 34000 Taiping, Perak, Malaysia</strong></div>
+          </div>
+        </div>
+
+        <form class="quote-form reveal" id="quote-form">
+          <div class="selected-products" id="selected-products" hidden><span>Kategori dipilih</span><div id="selected-product-chips"></div></div>
+          <div class="form-row">
+            <label>Nama penuh<input type="text" name="name" autocomplete="name" required placeholder="Nama anda" /></label>
+            <label>Organisasi / jabatan<input type="text" name="company" autocomplete="organization" placeholder="Nama syarikat / organisasi" /></label>
+          </div>
+          <div class="form-row">
+            <label>Email<input type="email" name="email" autocomplete="email" placeholder="nama@organisasi.com" /></label>
+            <label>Telefon<input type="tel" name="phone" autocomplete="tel" required placeholder="+60 ..." /></label>
+          </div>
+          <div class="form-row">
+            <label>Kategori<select name="product" id="product-select"><option value="">Pilih kategori</option><option>Baju Kurung Seragam</option><option>Kemeja & Pakaian Korporat</option><option>Uniform Kakitangan Sokongan</option><option>Kemeja & Blouse Seragam</option><option>Seluar & Komponen Set</option><option>Tempahan Institusi / Tender</option><option>Lain-lain / perlu cadangan</option></select></label>
+            <label>Anggaran kuantiti<input type="number" name="quantity" min="1" placeholder="Contoh: 50" /></label>
+          </div>
+          <div class="form-row">
+            <label>Tarikh diperlukan<input type="date" name="deadline" /></label>
+            <label>Lokasi penghantaran<input type="text" name="delivery" placeholder="Bandar / negeri" /></label>
+          </div>
+          <label>Spesifikasi / butiran<textarea name="message" rows="6" required placeholder="Nyatakan jenis pakaian, saiz, warna, material, potongan, contoh sedia ada atau rujukan tender jika berkaitan."></textarea></label>
+          <fieldset><legend>Hantar permintaan</legend><div class="send-options"><button class="button button-dark" type="submit" data-send="whatsapp">Buka WhatsApp</button><a class="button button-outline" data-phone-link href="tel:+60164111007">Hubungi terus</a></div></fieldset>
+          <p class="form-note">Maklumat hubungan boleh dikemas kini di <code>site.config.js</code>. Tiada data borang disimpan oleh laman statik ini.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a href="#top" class="brand brand-footer"><span class="brand-mark">E</span><span data-brand>EZFORM ENTERPRISE</span></a><p data-tagline>Pakaian seragam, jahitan & pembekalan untuk organisasi.</p></div>
+      <div><span class="footer-title">Navigasi</span><a href="#solutions">Produk</a><a href="#services">Perkhidmatan</a><a href="#process">Proses</a><a href="#about">Tentang</a></div>
+      <div><span class="footer-title">Hubungi</span><a data-phone-link href="tel:+60164111007" data-phone>+60 16-411 1007</a><a data-landline-link href="tel:+6058411007" data-landline>+60 5-841 1007</a><span data-location>Taiping, Perak</span></div>
+      <div><span class="footer-title">Sebut harga</span><a href="#quotation">Mulakan permintaan →</a><a data-whatsapp-link href="#">WhatsApp →</a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> <span data-brand>EZFORM ENTERPRISE</span></span><span>Static site • GitHub Pages ready</span></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+window.SITE_CONFIG = {
+  brand: 'EZFORM ENTERPRISE',
+  shortBrand: 'EZFORM',
+  tagline: 'Pakaian seragam, jahitan & pembekalan untuk organisasi.',
+  phoneDisplay: '+60 16-411 1007',
+  phoneWhatsApp: '60164111007',
+  landlineDisplay: '+60 5-841 1007',
+  location: '3A, Lorong Tupai, 34000 Taiping, Perak, Malaysia',
+  email: '',
+  facebook: '',
+  instagram: ''
+};
+
+</script>
+<script>
+(() => {
+  const config = window.SITE_CONFIG || {};
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const digits = value => String(value || '').replace(/\D/g, '');
+
+  $$('[data-brand]').forEach(el => el.textContent = config.brand || 'EZFORM ENTERPRISE');
+  $$('[data-tagline]').forEach(el => el.textContent = config.tagline || 'Pakaian seragam, jahitan & pembekalan untuk organisasi.');
+  $$('[data-phone]').forEach(el => el.textContent = config.phoneDisplay || '+60 16-411 1007');
+  $$('[data-landline]').forEach(el => el.textContent = config.landlineDisplay || '+60 5-841 1007');
+  $$('[data-location]').forEach(el => el.textContent = config.location || 'Taiping, Perak, Malaysia');
+  $$('[data-phone-link]').forEach(el => el.href = `tel:+${digits(config.phoneWhatsApp || '60164111007')}`);
+  $$('[data-landline-link]').forEach(el => el.href = `tel:+${digits(config.landlineDisplay || '6058411007')}`);
+  $$('[data-whatsapp-link]').forEach(el => el.href = `https://wa.me/${digits(config.phoneWhatsApp || '60164111007')}`);
+  document.title = `${config.brand || 'EZFORM ENTERPRISE'} — Pakaian Seragam & Pembekalan`;
+  $('#year').textContent = new Date().getFullYear();
+
+  const toggle = $('.nav-toggle');
+  const menu = $('#nav-menu');
+  const closeMenu = () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+  toggle.addEventListener('click', () => {
+    const open = !menu.classList.contains('open');
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+  });
+  $$('#nav-menu a').forEach(a => a.addEventListener('click', closeMenu));
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    $$('.reveal').forEach(el => observer.observe(el));
+  } else {
+    $$('.reveal').forEach(el => el.classList.add('visible'));
+  }
+
+  $$('.filter-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      $$('.filter-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      $$('.product-card').forEach(card => {
+        const categories = (card.dataset.category || '').split(/\s+/);
+        card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
+      });
+    });
+  });
+
+  const selected = new Set();
+  const selectedWrap = $('#selected-products');
+  const selectedChips = $('#selected-product-chips');
+  const productSelect = $('#product-select');
+  const toast = $('#toast');
+  let toastTimer;
+  const showToast = message => {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+  };
+  const renderSelected = () => {
+    selectedWrap.hidden = selected.size === 0;
+    selectedChips.innerHTML = '';
+    selected.forEach(product => {
+      const chip = document.createElement('span');
+      chip.className = 'selected-chip';
+      chip.textContent = product;
+      selectedChips.appendChild(chip);
+    });
+  };
+  $$('.product-add').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const product = btn.dataset.product;
+      if (selected.has(product)) {
+        selected.delete(product);
+        btn.classList.remove('added');
+        btn.textContent = 'Tambah ke permintaan +';
+        showToast(`${product} dibuang`);
+      } else {
+        selected.add(product);
+        btn.classList.add('added');
+        btn.textContent = 'Ditambah ✓';
+        if (!productSelect.value) productSelect.value = product;
+        showToast(`${product} ditambah`);
+      }
+      renderSelected();
+    });
+  });
+
+  const form = $('#quote-form');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const data = new FormData(form);
+    const productList = [...selected];
+    if (data.get('product') && !productList.includes(data.get('product'))) productList.push(data.get('product'));
+    const lines = [
+      `Salam ${config.brand || 'EZFORM ENTERPRISE'}, saya ingin meminta sebut harga pakaian seragam.`,
+      '',
+      `Nama: ${data.get('name')}`,
+      `Organisasi / jabatan: ${data.get('company') || '-'}`,
+      `Email: ${data.get('email') || '-'}`,
+      `Telefon: ${data.get('phone')}`,
+      `Kategori: ${productList.length ? productList.join(', ') : 'Belum pasti'}`,
+      `Anggaran kuantiti: ${data.get('quantity') || 'Belum disahkan'}`,
+      `Tarikh diperlukan: ${data.get('deadline') || 'Belum ditetapkan'}`,
+      `Lokasi penghantaran: ${data.get('delivery') || 'Belum ditetapkan'}`,
+      '',
+      'Spesifikasi / butiran:',
+      data.get('message')
+    ];
+    const number = digits(config.phoneWhatsApp || '60164111007');
+    window.open(`https://wa.me/${number}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
+  });
+})();
+
+</script>
+</body>
+</html>
