@@ -29,3 +29,7 @@ Edit the text in `index.html`.
 ## Publishing
 
 Upload the contents of this folder to the web root. `index.html` must remain beside the `css`, `js`, and `assets` folders.
+
+## Image swap behaviour
+
+Collection images switch on mouse hover on desktop/laptop. On touch devices such as phones and tablets, tap a swappable image to show the alternate photo and tap again to switch back.

@@ -44,6 +44,49 @@
     $$('.reveal').forEach(el => el.classList.add('visible'));
   }
 
+  // Touch devices do not have a true hover state. Let users tap image-swap cards instead.
+  const touchSwapQuery = window.matchMedia('(hover: none), (pointer: coarse)');
+  $$('.hover-swap').forEach(swap => {
+    const label = swap.getAttribute('aria-label') || 'Alternate product photo';
+
+    const configureTouchSwap = () => {
+      if (touchSwapQuery.matches) {
+        swap.setAttribute('role', 'button');
+        swap.setAttribute('tabindex', '0');
+        swap.setAttribute('aria-pressed', swap.classList.contains('is-alt') ? 'true' : 'false');
+        swap.setAttribute('aria-label', `${label}. Tap to switch photo.`);
+      } else {
+        swap.removeAttribute('role');
+        swap.removeAttribute('tabindex');
+        swap.removeAttribute('aria-pressed');
+        swap.setAttribute('aria-label', label);
+        swap.classList.remove('is-alt');
+      }
+    };
+
+    const toggleTouchPhoto = () => {
+      if (!touchSwapQuery.matches) return;
+      const showingAlt = swap.classList.toggle('is-alt');
+      swap.setAttribute('aria-pressed', String(showingAlt));
+    };
+
+    swap.addEventListener('click', toggleTouchPhoto);
+    swap.addEventListener('keydown', event => {
+      if (!touchSwapQuery.matches) return;
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleTouchPhoto();
+      }
+    });
+
+    configureTouchSwap();
+    if (typeof touchSwapQuery.addEventListener === 'function') {
+      touchSwapQuery.addEventListener('change', configureTouchSwap);
+    } else if (typeof touchSwapQuery.addListener === 'function') {
+      touchSwapQuery.addListener(configureTouchSwap);
+    }
+  });
+
   $$('.filter-chip').forEach(btn => {
     btn.addEventListener('click', () => {
       $$('.filter-chip').forEach(b => b.classList.remove('active'));
