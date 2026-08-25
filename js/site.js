@@ -87,17 +87,6 @@
     }
   });
 
-  $$('.filter-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      $$('.filter-chip').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      $$('.collection-card').forEach(card => {
-        const categories = (card.dataset.category || '').split(/\s+/);
-        card.classList.toggle('hidden', filter !== 'all' && !categories.includes(filter));
-      });
-    });
-  });
 
   const selected = new Set();
   const selectedWrap = $('#selected-products');
