@@ -327,7 +327,12 @@ h3 { letter-spacing: -.03em; }
   .colour-list { grid-template-columns: 1fr 1fr; }
   .size-card-head { align-items: flex-start; flex-direction: column; gap: 12px; padding: 21px 20px 17px; }
   .size-chart-note { flex-direction: column; gap: 8px; }
-  .size-table th,.size-table td { padding: 11px 12px; }
+  .size-table-wrap { overflow-x: visible; }
+  .size-table,.size-card-women .size-table { min-width: 0; table-layout: fixed; font-size: .66rem; }
+  .size-table th,.size-table td { padding: 9px 3px; white-space: normal; line-height: 1.18; }
+  .size-table thead th { font-size: .52rem; letter-spacing: 0; overflow-wrap: normal; word-break: normal; }
+  .size-card-women .size-table thead th { font-size: .46rem; }
+  .size-table tbody th { width: 12%; }
   .collection-card { min-height: auto; }
   .collection-visual { height: 280px; }
   .collection-visual.collection-photo { height: 420px; }

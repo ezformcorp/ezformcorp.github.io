@@ -104,7 +104,7 @@
     event.preventDefault();
     if (!form.reportValidity()) return;
     const data = new FormData(form);
-    const productList = [...selected];
+    const productList = [];
     if (data.get('product') && !productList.includes(data.get('product'))) productList.push(data.get('product'));
     const lines = [
       'Hello EZFORM, I would like to request a quote for corporate wear.',
@@ -121,9 +121,9 @@
       `Required date: ${data.get('deadline') || 'Not specified'}`,
       '',
       'Design / specifications:',
-      data.get('message')
+      data.get('message') || 'Not specified'
     ];
     const number = digits(config.phoneWhatsApp || '60164111007');
-    window.open(`https://wa.me/${number}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener,noreferrer');
+    window.location.href = `https://wa.me/${number}?text=${encodeURIComponent(lines.join('\n'))}`;
   });
 })();
