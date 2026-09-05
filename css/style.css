@@ -80,7 +80,7 @@ h3 { letter-spacing: -.03em; }
 .hero-shirt { height: 100%; display: grid; place-items: center; padding: 0; background: linear-gradient(145deg,#f8f2ea,#eee8df); overflow: hidden; }
 .hero-shirt img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
 .hero-card-foot { padding: 14px 18px; display: flex; justify-content: space-between; gap: 12px; font-size: .7rem; font-weight: 700; }
-.hero-sticker { position: absolute; z-index: 5; left: 15px; top: 84px; width: 96px; height: 96px; display: grid; place-items: center; text-align: center; border-radius: 50%; background: var(--red); color: var(--white); border: 2px solid var(--black); font-size: .62rem; line-height: 1.15; letter-spacing: .08em; font-weight: 900; transform: rotate(-8deg); }
+.hero-sticker { position: absolute; z-index: 5; left: 15px; top: 84px; width: 96px; height: 96px; display: grid; place-items: center; text-align: center; border-radius: 50%; background: var(--red); color: var(--white); border: 2px solid var(--white); font-size: .62rem; line-height: 1.15; letter-spacing: .08em; font-weight: 900; transform: rotate(-8deg); }
 
 .ticker { overflow: hidden; background: var(--red); color: var(--white); border-block: 1px solid var(--black); }
 .ticker-track { width: max-content; display: flex; align-items: center; gap: 27px; padding: 15px 0; animation: ticker 30s linear infinite; font-size: .75rem; font-weight: 900; letter-spacing: .12em; }
