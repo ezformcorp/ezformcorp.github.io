@@ -1,4 +1,5 @@
 (() => {
+  document.documentElement.classList.add('js');
   const config = window.SITE_CONFIG || {};
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -20,15 +21,24 @@
   const closeMenu = () => {
     menu.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
+    toggle.querySelector('.sr-only').textContent = 'Open menu';
     document.body.classList.remove('menu-open');
   };
   toggle.addEventListener('click', () => {
     const open = !menu.classList.contains('open');
     menu.classList.toggle('open', open);
     toggle.setAttribute('aria-expanded', String(open));
+    toggle.querySelector('.sr-only').textContent = open ? 'Close menu' : 'Open menu';
     document.body.classList.toggle('menu-open', open);
+    if (open) $('#nav-menu a')?.focus();
   });
   $$('#nav-menu a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && menu.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
 
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(entries => {
@@ -88,48 +98,8 @@
   });
 
 
-  const selected = new Set();
-  const selectedWrap = $('#selected-products');
-  const selectedChips = $('#selected-product-chips');
-  const productSelect = $('#product-select');
-  const toast = $('#toast');
-  let toastTimer;
-  const showToast = message => {
-    toast.textContent = message;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
-  };
-  const renderSelected = () => {
-    selectedWrap.hidden = selected.size === 0;
-    selectedChips.innerHTML = '';
-    selected.forEach(product => {
-      const chip = document.createElement('span');
-      chip.className = 'selected-chip';
-      chip.textContent = product;
-      selectedChips.appendChild(chip);
-    });
-  };
-  $$('.product-add').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const product = btn.dataset.product;
-      if (selected.has(product)) {
-        selected.delete(product);
-        btn.classList.remove('added');
-        btn.textContent = 'Add to quote +';
-        showToast(`${product} removed`);
-      } else {
-        selected.add(product);
-        btn.classList.add('added');
-        btn.textContent = 'Added';
-        if (!productSelect.value) productSelect.value = product;
-        showToast(`${product} added`);
-      }
-      renderSelected();
-    });
-  });
-
   const form = $('#quote-form');
+  form.elements.deadline.min = new Date().toISOString().split('T')[0];
   form.addEventListener('submit', event => {
     event.preventDefault();
     if (!form.reportValidity()) return;

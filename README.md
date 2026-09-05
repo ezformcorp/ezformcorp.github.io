@@ -10,7 +10,6 @@ This is the modular production build of the approved EZFORM website.
 - `js/site.js` — navigation, filters, form and WhatsApp behaviour
 - `assets/images/` — website photography and logo files
 - `assets/icons/` — favicon
-- `backup/ezform-approved-standalone.html` — untouched all-in-one approved backup
 
 ## Common edits
 
@@ -33,3 +32,5 @@ Upload the contents of this folder to the web root. `index.html` must remain bes
 ## Image swap behaviour
 
 Collection images switch on mouse hover on desktop/laptop. On touch devices such as phones and tablets, tap a swappable image to show the alternate photo and tap again to switch back.
+
+The collection filter and product add-to-quote controls are not part of the current page; the quote form's design-type selector is the active product input.
