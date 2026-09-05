@@ -97,6 +97,32 @@
     }
   });
 
+  const uniformPreview = $('#uniform-preview');
+  const uniformColourName = $('#uniform-colour-name');
+  const uniformSwatches = $$('.uniform-swatch');
+  if (uniformPreview && uniformColourName && uniformSwatches.length) {
+    uniformSwatches.forEach(button => {
+      const preload = new Image();
+      preload.src = button.dataset.image;
+      button.addEventListener('click', () => {
+        const colour = button.dataset.colour;
+        uniformPreview.classList.add('is-changing');
+        uniformPreview.src = button.dataset.image;
+        uniformPreview.alt = `Woman wearing a ${colour.toLowerCase()} EZFORM ready-made corporate uniform`;
+        uniformColourName.textContent = colour;
+        const quoteColour = $('[name="colour"]');
+        if (quoteColour) quoteColour.value = colour;
+        uniformSwatches.forEach(swatch => {
+          const active = swatch === button;
+          swatch.classList.toggle('active', active);
+          swatch.setAttribute('aria-pressed', String(active));
+        });
+        if (uniformPreview.complete) uniformPreview.classList.remove('is-changing');
+      });
+    });
+    uniformPreview.addEventListener('load', () => uniformPreview.classList.remove('is-changing'));
+  }
+
 
   const form = $('#quote-form');
   form.elements.deadline.min = new Date().toISOString().split('T')[0];

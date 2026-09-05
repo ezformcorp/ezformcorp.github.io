@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="assets/icons/favicon.svg" rel="icon" type="image/svg+xml"/>
 
-  <link href="css/style.css?v=20260905-4" rel="stylesheet"/>
+  <link href="css/style.css?v=20260905-5" rel="stylesheet"/>
   
 </head>
 <body>
@@ -119,11 +119,23 @@
 </div>
 </div>
 <div class="ready-layout">
-<article class="ready-feature reveal">
-<span class="ready-kicker">EZFORM Comfort Wear</span>
-<h3>Colour that works<br/>with your identity.</h3>
-<p>Select a ready-made shade for a polished team look, or use it as the starting point for a customised design.</p>
+<article class="uniform-customizer reveal">
+<div class="uniform-preview">
+<img alt="Woman wearing a white EZFORM ready-made corporate uniform" decoding="async" id="uniform-preview" loading="lazy" src="assets/images/ready-uniform-white.jpg"/>
+<span>Interactive Preview</span>
+</div>
+<div class="uniform-controls">
+<span class="ready-kicker">Choose a colour</span>
+<h3 aria-live="polite" id="uniform-colour-name">White</h3>
+<div aria-label="Uniform preview colours" class="uniform-swatches" role="group">
+<button aria-pressed="true" class="uniform-swatch active" data-colour="White" data-image="assets/images/ready-uniform-white.jpg" style="--swatch:#f7f5ef" type="button"><span class="sr-only">Preview white uniform</span></button>
+<button aria-pressed="false" class="uniform-swatch" data-colour="Burgundy" data-image="assets/images/ready-uniform-burgundy.jpg" style="--swatch:#7c2643" type="button"><span class="sr-only">Preview burgundy uniform</span></button>
+<button aria-pressed="false" class="uniform-swatch" data-colour="Navy Blue" data-image="assets/images/ready-uniform-navy.jpg" style="--swatch:#152d4d" type="button"><span class="sr-only">Preview navy blue uniform</span></button>
+<button aria-pressed="false" class="uniform-swatch" data-colour="Teal Blue" data-image="assets/images/ready-uniform-teal.jpg" style="--swatch:#277b83" type="button"><span class="sr-only">Preview teal blue uniform</span></button>
+</div>
+<p>Select a colour to preview it on the uniform.</p>
 <a class="button button-light" href="#quotation">Ask About Availability <span aria-hidden="true">→</span></a>
+</div>
 </article>
 <div class="palette-grid">
 <article class="palette-card reveal">
@@ -158,6 +170,7 @@
 <h3>Signature Colours</h3>
 <ul class="colour-list">
 <li><i style="--swatch:#dc3f82"></i>Hot Pink</li>
+<li><i style="--swatch:#7c2643"></i>Burgundy</li>
 <li><i style="--swatch:#d99aab"></i>Soft Rose</li>
 <li><i style="--swatch:#a55b8f"></i>Purple Pink</li>
 <li><i style="--swatch:#9a80af"></i>Lavender Purple</li>
@@ -348,7 +361,7 @@
 </div>
 <div class="container footer-bottom"><span>© <span id="year"></span> EZFORM ENTERPRISE</span><span>Corporate Wear • Custom Made • Taiping</span></div>
 </footer>
-<script src="js/config.js?v=20260905-4"></script>
-<script src="js/site.js?v=20260905-4"></script>
+<script src="js/config.js?v=20260905-5"></script>
+<script src="js/site.js?v=20260905-5"></script>
 </body>
 </html>
