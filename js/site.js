@@ -7,11 +7,9 @@
 
   $$('[data-tagline]').forEach(el => el.textContent = config.tagline || 'Custom-made corporate wear for organisations and professional teams.');
   $$('[data-phone]').forEach(el => el.textContent = config.phoneDisplay || '+60 16-411 1007');
-  $$('[data-landline]').forEach(el => el.textContent = config.landlineDisplay || '+60 5-841 1007');
   $$('[data-email]').forEach(el => el.textContent = config.email || 'ezform7@gmail.com');
   $$('[data-location]').forEach(el => el.textContent = config.location || 'Taiping, Perak');
   $$('[data-phone-link]').forEach(el => el.href = `tel:+${digits(config.phoneWhatsApp || '60164111007')}`);
-  $$('[data-landline-link]').forEach(el => el.href = `tel:+${digits(config.landlineDisplay || '6058411007')}`);
   $$('[data-email-link]').forEach(el => el.href = `mailto:${config.email || 'ezform7@gmail.com'}`);
   $$('[data-whatsapp-link]').forEach(el => el.href = `https://wa.me/${digits(config.phoneWhatsApp || '60164111007')}`);
   $('#year').textContent = new Date().getFullYear();
